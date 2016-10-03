@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <meta charset="UTF-8">
+    <title>MicroMessages</title>
+</head>
+<body>
+
+{{#user}}
+{{> resources/templates/logged_in_header.html}}
+{{/user}}
+{{^user}}
+{{> resources/templates/login_header.html}}
+{{/user}}
+
+{{#user}}
+<h3>Messages by {{username}}:</h3>
+<ul>
+    {{#posts}}
+    <li>{{content}}</li>
+    {{/posts}}
+</ul>
+{{/user}}
+
+<script src="/js/bootstrap.min.js"/>
+
+</body>
+
+</html>
